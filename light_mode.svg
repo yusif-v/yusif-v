@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420" fill="none" font-family="'JetBrains Mono','Cascadia Code',ui-monospace,'SF Mono',Menlo,Consolas,monospace">
+  <defs>
+    <linearGradient id="shield" x1="86" y1="96" x2="214" y2="336" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0891b2"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="cp_prompt"><rect x="312" y="92"  width="0" height="30"><animate attributeName="width" dur="13s" repeatCount="indefinite" values="0;0;300;300" keyTimes="0;0.023;0.062;1"/></rect></clipPath>
+    <clipPath id="cp_rule"><rect   x="312" y="126" width="0" height="14"><animate attributeName="width" dur="13s" repeatCount="indefinite" values="0;0;446;446" keyTimes="0;0.069;0.108;1"/></rect></clipPath>
+    <clipPath id="cp_role"><rect   x="312" y="158" width="0" height="30"><animate attributeName="width" dur="13s" repeatCount="indefinite" values="0;0;470;470" keyTimes="0;0.108;0.146;1"/></rect></clipPath>
+    <clipPath id="cp_focus"><rect  x="312" y="200" width="0" height="30"><animate attributeName="width" dur="13s" repeatCount="indefinite" values="0;0;470;470" keyTimes="0;0.154;0.192;1"/></rect></clipPath>
+    <clipPath id="cp_stack"><rect  x="312" y="242" width="0" height="30"><animate attributeName="width" dur="13s" repeatCount="indefinite" values="0;0;470;470" keyTimes="0;0.200;0.238;1"/></rect></clipPath>
+    <clipPath id="cp_web"><rect    x="312" y="284" width="0" height="30"><animate attributeName="width" dur="13s" repeatCount="indefinite" values="0;0;470;470" keyTimes="0;0.246;0.285;1"/></rect></clipPath>
+    <clipPath id="cp_status"><rect x="312" y="326" width="0" height="30"><animate attributeName="width" dur="13s" repeatCount="indefinite" values="0;0;470;470" keyTimes="0;0.292;0.331;1"/></rect></clipPath>
+  </defs>
+
+  <rect x="10" y="10" width="800" height="400" rx="14" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+  <path d="M24,10 H796 A14,14 0 0 1 810,24 V54 H10 V24 A14,14 0 0 1 24,10 Z" fill="#f6f8fa"/>
+  <line x1="10" y1="54" x2="810" y2="54" stroke="#d0d7de" stroke-width="1"/>
+  <circle cx="34" cy="32" r="6" fill="#ff5f56"/>
+  <circle cx="56" cy="32" r="6" fill="#ffbd2e"/>
+  <circle cx="78" cy="32" r="6" fill="#27c93f"/>
+  <text x="410" y="37" text-anchor="middle" font-size="13" fill="#57606a">yusif@yusif-v: ~</text>
+
+  <g filter="url(#glow)">
+    <path d="M150,96 L214,124 L214,214 C214,272 186,312 150,336 C114,312 86,272 86,214 L86,124 Z" fill="url(#shield)"/>
+    <circle cx="150" cy="196" r="15" fill="#ffffff"/>
+    <path d="M142,198 H158 L162,242 H138 Z" fill="#ffffff"/>
+    <g clip-path="url(#cp_shield)">
+      <rect x="86" y="96" width="128" height="8" fill="#ffffff" opacity="0.5">
+        <animate attributeName="y" dur="3.2s" repeatCount="indefinite" values="96;330;96" keyTimes="0;0.5;1"/>
+        <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" values="0;0.55;0" keyTimes="0;0.5;1"/>
+      </rect>
+    </g>
+  </g>
+  <clipPath id="cp_shield"><path d="M150,96 L214,124 L214,214 C214,272 186,312 150,336 C114,312 86,272 86,214 L86,124 Z"/></clipPath>
+
+  <g clip-path="url(#cp_prompt)">
+    <text x="316" y="114" font-size="17" font-weight="700">
+      <tspan fill="#1a7f37">yusif</tspan><tspan fill="#57606a">@</tspan><tspan fill="#0969da">yusif-v</tspan>
+    </text>
+  </g>
+  <g clip-path="url(#cp_rule)">
+    <text x="316" y="136" font-size="17" fill="#d0d7de" letter-spacing="1">────────────────────────────</text>
+  </g>
+
+  <g clip-path="url(#cp_role)" font-size="15">
+    <text x="316" y="180" fill="#0969da" font-weight="700">role</text>
+    <text x="430" y="180" fill="#1f2328">Cybersecurity Specialist</text>
+  </g>
+  <g clip-path="url(#cp_focus)" font-size="15">
+    <text x="316" y="222" fill="#0969da" font-weight="700">focus</text>
+    <text x="430" y="222" fill="#1f2328">AI · Offensive Security · OSS</text>
+  </g>
+  <g clip-path="url(#cp_stack)" font-size="15">
+    <text x="316" y="264" fill="#0969da" font-weight="700">stack</text>
+    <text x="430" y="264" fill="#1f2328">Python · Go · Bash · Linux</text>
+  </g>
+  <g clip-path="url(#cp_web)" font-size="15">
+    <text x="316" y="306" fill="#0969da" font-weight="700">web</text>
+    <text x="430" y="306" fill="#1a7f37">yusif-v.github.io</text>
+  </g>
+  <g clip-path="url(#cp_status)" font-size="15">
+    <text x="316" y="348" fill="#0969da" font-weight="700">status</text>
+    <text x="430" y="348" fill="#1f2328"><tspan fill="#1a7f37">●</tspan> online</text>
+  </g>
+
+  <rect x="516" y="335" width="10" height="18" fill="#1a7f37">
+    <animate attributeName="opacity" dur="1s" repeatCount="indefinite" values="1;1;0;0;1" keyTimes="0;0.4;0.5;0.9;1"/>
+  </rect>
+</svg>
