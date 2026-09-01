@@ -52,7 +52,7 @@ KV: Uptime | {uptime}
 KV: IDE | Zed, Cursor
 BLANK
 KV: Languages.Programming | {langs_programming}
-KV: Languages.Computer | YAML, TOML
+KV: Languages.Computer | YAML, TOML, XML
 KV: Languages.Real | Turkish, English, Russian
 BLANK
 SECTION: Contact

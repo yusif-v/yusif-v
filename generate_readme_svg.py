@@ -229,6 +229,13 @@ def dots(key, target=30):
     return "." * max(3, target - len(key))
 
 
+DIVIDER_TOTAL = 65  # header/section divider lines all end at this column
+
+
+def divider_dashes(prefix):
+    return "-" * max(3, DIVIDER_TOTAL - len(prefix))
+
+
 THEMES = {
     "dark": {
         "bg": "#161b22", "text": "#c9d1d9", "key": "#ffa657",
@@ -260,7 +267,7 @@ def stats_repos_text(values):
 
 def stats_commits_text(values):
     return (
-        f". Commits:{dots('Commits', 24)} {values['commits']} | "
+        f". Commits:{dots('Commits', 25)} {values['commits']} | "
         f"Followers:{dots('Followers', 12)} {values['followers']}"
     )
 
@@ -275,9 +282,11 @@ def stats_loc_text(values):
 def row_plain_text(row, values):
     kind = row[0]
     if kind == "header":
-        return f"{row[1]} " + "-" * 55
+        prefix = f"{row[1]} "
+        return prefix + divider_dashes(prefix)
     if kind == "section":
-        return f"- {row[1]} " + "-" * 50
+        prefix = f"- {row[1]} "
+        return prefix + divider_dashes(prefix)
     if kind == "site":
         return row[1]
     if kind == "kv":
@@ -324,9 +333,11 @@ def render(theme_name, art, rows, values):
         if kind == "blank":
             continue
         if kind == "header":
-            body.append(f'<tspan x="{COL_X}" y="{y}">{escape(row[1])}</tspan> ' + "-" * 55)
+            prefix = f"{row[1]} "
+            body.append(f'<tspan x="{COL_X}" y="{y}">{escape(row[1])}</tspan> ' + divider_dashes(prefix))
         elif kind == "section":
-            body.append(f'<tspan x="{COL_X}" y="{y}">- {escape(row[1])}</tspan> ' + "-" * 50)
+            prefix = f"- {row[1]} "
+            body.append(f'<tspan x="{COL_X}" y="{y}">- {escape(row[1])}</tspan> ' + divider_dashes(prefix))
         elif kind == "site":
             body.append(f'<tspan x="{COL_X}" y="{y}" fill="{t["value"]}">{escape(row[1])}</tspan>')
         elif kind == "kv":
@@ -355,7 +366,7 @@ def render(theme_name, art, rows, values):
             body.append(
                 f'<tspan x="{COL_X}" y="{y}" fill="{t["cc"]}">. </tspan>'
                 f'<tspan fill="{t["key"]}">Commits</tspan>:'
-                f'<tspan fill="{t["cc"]}">{escape(dots("Commits", 24))} </tspan>'
+                f'<tspan fill="{t["cc"]}">{escape(dots("Commits", 25))} </tspan>'
                 f'<tspan fill="{t["value"]}">{escape(values["commits"])}</tspan>'
                 f'<tspan fill="{t["cc"]}"> | </tspan>'
                 f'<tspan fill="{t["key"]}">Followers</tspan>:'
