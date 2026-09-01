@@ -229,7 +229,7 @@ def dots(key, target=30):
     return "." * max(3, target - len(key))
 
 
-DIVIDER_TOTAL = 65  # header/section divider lines all end at this column
+DIVIDER_TOTAL = 69  # header/section divider lines all end at this column
 
 
 def divider_dashes(prefix):
@@ -268,13 +268,13 @@ def stats_repos_text(values):
 def stats_commits_text(values):
     return (
         f". Commits:{dots('Commits', 25)} {values['commits']} | "
-        f"Followers:{dots('Followers', 12)} {values['followers']}"
+        f"Followers:{dots('Followers', 16)} {values['followers']}"
     )
 
 
 def stats_loc_text(values):
     return (
-        f". Lines of Code on GitHub:{dots('Lines of Code on GitHub', 30)} "
+        f". Lines of Code on GitHub:{'..'} "
         f"{values['loc_total']} ( {values['loc_add']}++, {values['loc_del']}-- )"
     )
 
@@ -370,7 +370,7 @@ def render(theme_name, art, rows, values):
                 f'<tspan fill="{t["value"]}">{escape(values["commits"])}</tspan>'
                 f'<tspan fill="{t["cc"]}"> | </tspan>'
                 f'<tspan fill="{t["key"]}">Followers</tspan>:'
-                f'<tspan fill="{t["cc"]}">{escape(dots("Followers", 12))} </tspan>'
+                f'<tspan fill="{t["cc"]}">{escape(dots("Followers", 16))} </tspan>'
                 f'<tspan fill="{t["value"]}">{escape(values["followers"])}</tspan>'
             )
         elif kind == "stats_loc":
@@ -378,7 +378,7 @@ def render(theme_name, art, rows, values):
             body.append(
                 f'<tspan x="{COL_X}" y="{y}" fill="{t["cc"]}">. </tspan>'
                 f'<tspan fill="{t["key"]}">{label}</tspan>:'
-                f'<tspan fill="{t["cc"]}">{escape(dots(label, 30))} </tspan>'
+                f'<tspan fill="{t["cc"]}">{escape("..")} </tspan>'
                 f'<tspan fill="{t["value"]}">{escape(values["loc_total"])}</tspan>'
                 f'<tspan fill="{t["cc"]}"> ( </tspan>'
                 f'<tspan fill="{t["add"]}">{escape(values["loc_add"])}++</tspan>'
