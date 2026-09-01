@@ -239,12 +239,12 @@ def divider_dashes(prefix):
 THEMES = {
     "dark": {
         "bg": "#161b22", "text": "#c9d1d9", "key": "#ffa657",
-        "value": "#a5d6ff", "cc": "#616e7f", "art": "#c9d1d9",
+        "value": "#a5d6ff", "cc": "#616e7f", "art": "#ff1a1a",
         "add": "#3fb950", "del": "#f85149",
     },
     "light": {
         "bg": "#ffffff", "text": "#24292f", "key": "#953800",
-        "value": "#0969da", "cc": "#8c959f", "art": "#24292f",
+        "value": "#0969da", "cc": "#8c959f", "art": "#e00000",
         "add": "#1a7f37", "del": "#cf222e",
     },
 }
