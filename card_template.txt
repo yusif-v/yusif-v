@@ -1,0 +1,68 @@
+# This file is the single source of truth for the profile card's content.
+# Edit it directly — generate_readme_svg.py reads this file and renders
+# dark_mode.svg / light_mode.svg from it. No need to touch the Python.
+#
+# Line syntax:
+#   HEADER: <handle text>            one per file, the top line e.g. "yusif@yusif-v"
+#   SECTION: <name>                  a "- Name ----" divider row
+#   KV: <key> | <value>              a ". key: .... value" row
+#   BLANK                            an empty spacer row
+#   SITE: <url>                      plain highlighted line, no dots
+#   STATS_REPOS                      computed: repos / contributed / stars
+#   STATS_COMMITS                    computed: commits (this year) / followers
+#   STATS_LOC                        computed: lines of code (++/--), skip this
+#                                     line to leave it out entirely
+#
+# Values may reference live data with {placeholders}:
+#   {uptime} {langs_programming} {langs_computer}
+#   {repos} {stars} {followers} {commits} {contributed_repos}
+#   {loc_total} {loc_add} {loc_del}
+# (STATS_REPOS / STATS_COMMITS / STATS_LOC already fill these in themselves —
+# you don't need placeholders for those three lines.)
+#
+# Lines starting with # are comments and ignored. Blank lines in this file
+# (outside the ART block) are also ignored — use the BLANK keyword instead.
+
+<<<ART
+⠀⠀⠀⠀⠀⠀⠀⢰⣤⣠⣴⣦⣄⣤⡆⠀⠀⠀⠀⠀⠀⠀
+⠲⢶⣶⣶⣶⣶⡄⠸⠿⠿⠿⠿⠿⠿⠇⢠⣶⣶⣶⣶⡶⠖
+⠀⠀⠉⠻⠿⠿⢿⣦⡀⠀⠀⠀⠀⢀⣴⡿⠿⠿⠟⠉⠀⠀
+⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⣼⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⢹⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣰⣿⣿⠿⢿⡿⠿⣿⣿⣆⠀⠀⠀⠀⠀⠀
+⠀⢀⣀⠀⠀⢰⣿⣿⠁⠀⢸⡇⠀⠈⣿⣿⡆⠀⠀⣀⡀⠀
+⠘⠻⠿⠛⠛⠛⣿⣿⠛⠛⢻⡟⠛⠛⣿⣿⠛⠛⠛⠿⠟⠃
+⠀⠀⠀⠀⠀⠰⣿⣿⡷⠀⢸⡇⣠⣾⡿⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠛⠁⣠⣾⣿⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⢿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠸⣿⣧⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+>>>
+
+<<<ROWS
+HEADER: yusif@yusif-v
+KV: OS | Linux, Android, macOS
+KV: Shell | zsh
+KV: Uptime | {uptime}
+KV: IDE | Zed, Cursor
+BLANK
+KV: Languages.Programming | {langs_programming}
+KV: Languages.Computer | {langs_computer}
+KV: Languages.Real | Turkish, English, Russian
+BLANK
+SECTION: Contact
+KV: Email.Personal | code.yusif.v@gmail.com
+KV: X | @codeyusifv
+BLANK
+SECTION: GitHub Stats
+STATS_REPOS
+STATS_COMMITS
+STATS_LOC
+BLANK
+SITE: yusif-v.github.io
+>>>
